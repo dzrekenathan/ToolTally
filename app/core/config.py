@@ -10,6 +10,12 @@ class Settings(BaseSettings):
     secret_key: str
     algorithm: str
     access_token_expire_minutes: int
+    reset_password_url: str
+    verify_email_url: str
+    email_account: str
+    email_password: str
+    smtp_host: str
+    smtp_port: str
 
 
     class Config:

@@ -1,7 +1,9 @@
 from os import getenv
 
-from core.email import send_email
+
 from dotenv import load_dotenv
+
+from app.core.email import send_email
 
 load_dotenv()
 
@@ -18,7 +20,7 @@ def send_email_verification(receiver_email: str, token: str) -> None:
     <p>Click on this <a href="{url}">Verify Email</a> to verify your email.</p>
     <p>For more information contact: <a href="mailto:{sender_email}">{sender_email}</a></p>
     <p>Best regards,<br>
-    The VSA Team</p>
+    The Tooltally Team</p>
   </body>
 </html>
 """

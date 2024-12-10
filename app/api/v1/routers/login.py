@@ -11,7 +11,6 @@ from app.schemas.user import UserCreate, UserOut
 from app.core.authentication.auth_middleware import get_current_active_user
 
 
-
 router = APIRouter()
 
 
