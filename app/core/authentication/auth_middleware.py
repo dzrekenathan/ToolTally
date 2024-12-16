@@ -30,11 +30,11 @@ def get_current_user(token: str = Depends(oauth2_scheme), db: Session = Depends(
 
     tokenData: TokenData = verify_token(token, credentials_exception)
 
-    # if tokenData.type != "bearer":
-    #     raise HTTPException(
-    #         status_code=status.HTTP_400_BAD_REQUEST,
-    #         detail="Invalid token type",
-    #     )
+    if tokenData.type != "bearer":
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail="Invalid token type",
+        )
 
     user = get_user(email=tokenData.email, db=db)
 
